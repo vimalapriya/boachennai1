@@ -1,13 +1,13 @@
 --- # my first playbook
- - hosts: local
+ - hosts: client
    remote_user: ansible
    become: yes
    tasks:
    - name: installing apache on nodes
      yum:
        name: httpd
-       state: latest
-   - name: Restarting the Apache service
-     service:
-       name: httpd
-       state: restarted
+       state: absent
+   #- name: Restarting the Apache service
+    # service:
+    #name: httpd
+     #  state: restarted
